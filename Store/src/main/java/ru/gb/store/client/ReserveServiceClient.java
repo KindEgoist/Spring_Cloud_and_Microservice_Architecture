@@ -10,7 +10,7 @@ import ru.gb.store.dto.ReserveResponse;
 @FeignClient(name = "reserve-service", path = "/reserve")
 public interface ReserveServiceClient {
 
-    @PostMapping("/reserve")
+    @PostMapping("/res")
     ReserveResponse reserve(@RequestBody PurchaseRequest request);
 
     @PostMapping("/cancel")

@@ -18,7 +18,7 @@ public class ReserveController {
         this.reserveService = reserveService;
     }
 
-    @PostMapping
+    @PostMapping("/res")
     public ResponseEntity<ReserveResponse> reserveProduct(@RequestBody ProductActionRequest request) {
         boolean reserved = reserveService.reserve(request.getProductId(), request.getQuantity());
         if (reserved) {
