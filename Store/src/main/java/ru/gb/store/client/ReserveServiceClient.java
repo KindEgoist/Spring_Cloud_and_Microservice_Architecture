@@ -7,7 +7,7 @@ import ru.gb.store.dto.ActionResponse;
 import ru.gb.store.dto.PurchaseRequest;
 import ru.gb.store.dto.ReserveResponse;
 
-@FeignClient(name = "reserve-service")
+@FeignClient(name = "reserve-service", path = "/reserve")
 public interface ReserveServiceClient {
 
     @PostMapping("/reserve")
@@ -19,3 +19,4 @@ public interface ReserveServiceClient {
     @PostMapping("/commit")
     ActionResponse commit(@RequestBody PurchaseRequest request);
 }
+

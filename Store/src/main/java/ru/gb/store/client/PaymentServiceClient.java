@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import ru.gb.store.dto.ActionResponse;
 import ru.gb.store.dto.PaymentRequest;
 
-@FeignClient(name = "payment-service")
+@FeignClient(name = "payment-service", path = "/payment")
 public interface PaymentServiceClient {
 
     @PostMapping("/pay")
     ActionResponse pay(@RequestBody PaymentRequest request);
 }
+
