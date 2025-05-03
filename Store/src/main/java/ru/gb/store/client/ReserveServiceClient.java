@@ -6,8 +6,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import ru.gb.store.dto.ActionResponse;
 import ru.gb.store.dto.PurchaseRequest;
 import ru.gb.store.dto.ReserveResponse;
+import ru.gb.store.fallback.ReserveServiceFallback;
 
-@FeignClient(name = "reserve-service", path = "/reserve")
+
+@FeignClient(
+        name = "reserve-service",
+        path = "/reserve",
+        fallback = ReserveServiceFallback.class
+)
+
+//@FeignClient(name = "reserve-service", path = "/reserve")
 public interface ReserveServiceClient {
 
     @PostMapping("/res")

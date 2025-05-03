@@ -14,9 +14,13 @@
         <module name="Eureka_Server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Config_Server" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Config_Server" options="-parameters" />
       <module name="Payment" options="-parameters" />
       <module name="Reserve" options="-parameters" />
       <module name="Store" options="-parameters" />
